@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pearl Dental Studio — Modern Dentistry, Gentle Care</title>
+  <meta name="description" content="Pearl Dental Studio: preventive, cosmetic and restorative dentistry in a calm, modern clinic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <svg class="loader__tooth" viewBox="0 0 64 64">
+        <path d="M32 10c-6-5-16-5-20 2-4 8 0 16 2 22 2 7 2 20 8 20 5 0 4-12 10-12s5 12 10 12c6 0 6-13 8-20 2-6 6-14 2-22-4-7-14-7-20-2z" />
+      </svg>
+      <div class="loader__count"><span id="loaderCount">0</span>%</div>
+    </div>
+    <div class="loader__panel loader__panel--top"></div>
+    <div class="loader__panel loader__panel--bottom"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" id="progress"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" data-cursor="Home">
+        <svg viewBox="0 0 64 64" class="logo__mark"><path d="M32 10c-6-5-16-5-20 2-4 8 0 16 2 22 2 7 2 20 8 20 5 0 4-12 10-12s5 12 10 12c6 0 6-13 8-20 2-6 6-14 2-22-4-7-14-7-20-2z"/></svg>
+        <span>Pearl<em>Dental</em></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#process" class="nav__link">Your Visit</a>
+        <a href="#team" class="nav__link">Team</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+      </nav>
+      <a href="#book" class="btn btn--primary btn--sm magnetic header__cta"><span>Book a visit</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__nav">
+      <a href="#services" class="menu__link"><span>Services</span></a>
+      <a href="#about" class="menu__link"><span>About</span></a>
+      <a href="#process" class="menu__link"><span>Your Visit</span></a>
+      <a href="#team" class="menu__link"><span>Team</span></a>
+      <a href="#faq" class="menu__link"><span>FAQ</span></a>
+      <a href="#book" class="menu__link"><span>Book a visit</span></a>
+    </nav>
+    <p class="menu__foot">+260 97 000 0000 · hello@pearldental.demo</p>
+  </div>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="blob blob--1" data-parallax="0.15"></div>
+        <div class="blob blob--2" data-parallax="-0.1"></div>
+        <div class="blob blob--3" data-parallax="0.25"></div>
+        <canvas class="hero__particles" id="particles"></canvas>
+      </div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal-fade"><span class="pulse"></span> Now accepting new patients</p>
+          <h1 class="hero__title split" data-split>
+            Healthy smiles,<br /><span class="grad">beautifully</span> crafted.
+          </h1>
+          <p class="hero__lead reveal-fade" style="--d:.5s">
+            Preventive, cosmetic and restorative dentistry in a calm studio built around your comfort. No judgement, no rush — just exceptional care.
+          </p>
+          <div class="hero__actions reveal-fade" style="--d:.65s">
+            <a href="#book" class="btn btn--primary magnetic" data-cursor="Book"><span>Book your appointment</span>
+              <svg viewBox="0 0 24 24" class="btn__icon"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#services" class="btn btn--ghost magnetic"><span>Explore treatments</span></a>
+          </div>
+          <div class="hero__trust reveal-fade" style="--d:.8s">
+            <div class="avatars">
+              <span style="--h:190">A</span><span style="--h:160">M</span><span style="--h:220">K</span><span style="--h:280">T</span>
+            </div>
+            <div>
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <small>4.9 from 1,200+ patient reviews</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__card tilt" data-tilt>
+            <div class="hero__ring"></div>
+            <svg class="hero__tooth" viewBox="0 0 200 220" aria-hidden="true">
+              <defs>
+                <linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#d9f3f1"/>
+                </linearGradient>
+                <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                  <stop offset=".5" stop-color="#fff" stop-opacity=".9"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+                <clipPath id="toothClip"><path d="M100 30c-18-15-50-16-64 6-13 22-1 50 5 70 6 22 6 84 28 84 17 0 14-44 31-44s14 44 31 44c22 0 22-62 28-84 6-20 18-48 5-70-14-22-46-21-64-6z"/></clipPath>
+              </defs>
+              <path class="hero__tooth-body" d="M100 30c-18-15-50-16-64 6-13 22-1 50 5 70 6 22 6 84 28 84 17 0 14-44 31-44s14 44 31 44c22 0 22-62 28-84 6-20 18-48 5-70-14-22-46-21-64-6z" fill="url(#toothGrad)"/>
+              <g clip-path="url(#toothClip)"><rect class="hero__shine" x="-120" y="0" width="80" height="220" fill="url(#shine)" transform="skewX(-20)"/></g>
+              <path class="hero__tooth-line" d="M100 30c-18-15-50-16-64 6-13 22-1 50 5 70 6 22 6 84 28 84 17 0 14-44 31-44s14 44 31 44c22 0 22-62 28-84 6-20 18-48 5-70-14-22-46-21-64-6z" fill="none"/>
+              <g class="sparkle sparkle--1"><path d="M150 40l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></g>
+              <g class="sparkle sparkle--2"><path d="M45 150l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></g>
+              <g class="sparkle sparkle--3"><path d="M165 120l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></g>
+            </svg>
+            <div class="float-chip float-chip--a"><strong>98%</strong><span>pain-free visits</span></div>
+            <div class="float-chip float-chip--b"><span class="dot"></span>Same-day emergency slots</div>
+            <div class="float-chip float-chip--c"><strong>15+</strong><span>years of care</span></div>
+          </div>
+        </div>
+      </div>
+      <a href="#marquee" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" id="marquee" aria-label="Treatments">
+      <div class="marquee__track" data-marquee>
+        <div class="marquee__group">
+          <span>Teeth Whitening</span><i>✦</i><span>Invisible Aligners</span><i>✦</i><span>Dental Implants</span><i>✦</i><span>Veneers</span><i>✦</i><span>Root Canal</span><i>✦</i><span>Kids Dentistry</span><i>✦</i><span>Emergency Care</span><i>✦</i>
+        </div>
+      </div>
+      <div class="marquee__track marquee__track--reverse" data-marquee>
+        <div class="marquee__group">
+          <span>Hygiene & Cleaning</span><i>✦</i><span>Smile Makeovers</span><i>✦</i><span>Crowns & Bridges</span><i>✦</i><span>Gum Health</span><i>✦</i><span>Digital X-Rays</span><i>✦</i><span>Sedation Options</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / intro -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <div class="about__media reveal" data-reveal="left">
+          <div class="about__img">
+            <svg viewBox="0 0 400 480" aria-hidden="true">
+              <defs><linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7f7f5"/><stop offset="1" stop-color="#bfe9e4"/></linearGradient></defs>
+              <rect width="400" height="480" fill="url(#roomGrad)"/>
+              <circle cx="300" cy="110" r="60" fill="#fff" opacity=".7"/>
+              <rect x="40" y="300" width="320" height="24" rx="12" fill="#0d3b3a" opacity=".15"/>
+              <path d="M90 300c0-60 30-90 80-90h90c30 0 40 20 40 40v50z" fill="#0f766e"/>
+              <rect x="120" y="320" width="20" height="90" fill="#0d3b3a" opacity=".5"/>
+              <rect x="260" y="320" width="20" height="90" fill="#0d3b3a" opacity=".5"/>
+              <path d="M250 120v60" stroke="#0d3b3a" stroke-width="6" stroke-linecap="round" opacity=".4"/>
+              <circle cx="250" cy="110" r="22" fill="#fde68a"/>
+              <circle cx="250" cy="110" r="40" fill="#fde68a" opacity=".25" class="lamp-glow"/>
+            </svg>
+          </div>
+          <div class="about__badge rotate-badge">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="circlePath" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+              <text><textPath href="#circlePath">GENTLE CARE • MODERN DENTISTRY • </textPath></text>
+            </svg>
+            <span>✦</span>
+          </div>
+        </div>
+        <div class="about__copy">
+          <p class="eyebrow reveal" data-reveal>About the studio</p>
+          <h2 class="section__title reveal-words" data-words>We believe a visit to the dentist should feel like a breath of fresh air.</h2>
+          <p class="reveal" data-reveal>Pearl Dental Studio combines the latest digital technology with an unhurried, people-first approach. Every plan is explained clearly, priced transparently and designed around your goals.</p>
+          <ul class="checks">
+            <li class="reveal" data-reveal style="--d:.05s">Digital scans — no messy impressions</li>
+            <li class="reveal" data-reveal style="--d:.1s">Transparent pricing before any treatment</li>
+            <li class="reveal" data-reveal style="--d:.15s">Calm, anxiety-friendly environment</li>
+            <li class="reveal" data-reveal style="--d:.2s">Flexible evening & weekend hours</li>
+          </ul>
+          <div class="stats">
+            <div class="stat reveal" data-reveal><strong data-count="15" data-suffix="+">0</strong><span>Years experience</span></div>
+            <div class="stat reveal" data-reveal style="--d:.1s"><strong data-count="12000" data-suffix="+">0</strong><span>Happy patients</span></div>
+            <div class="stat reveal" data-reveal style="--d:.2s"><strong data-count="4.9" data-decimals="1">0</strong><span>Average rating</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services (sticky stacking cards) -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal>Treatments</p>
+          <h2 class="section__title reveal-words" data-words>Everything your smile needs, under one roof.</h2>
+        </div>
+        <div class="stack">
+          <article class="stack__card" style="--i:0">
+            <div class="stack__num">01</div>
+            <div class="stack__body">
+              <h3>Preventive Care</h3>
+              <p>Check-ups, professional cleaning and early detection that keep small issues from becoming big ones.</p>
+              <ul class="tags"><li>Exams</li><li>Hygiene</li><li>Fluoride</li><li>Sealants</li></ul>
+            </div>
+            <div class="stack__icon"><svg viewBox="0 0 64 64"><path d="M32 6l20 8v16c0 14-9 24-20 28C21 54 12 44 12 30V14z"/><path d="M24 32l6 6 12-12"/></svg></div>
+          </article>
+          <article class="stack__card" style="--i:1">
+            <div class="stack__num">02</div>
+            <div class="stack__body">
+              <h3>Cosmetic Dentistry</h3>
+              <p>Whitening, veneers and bonding to brighten and reshape your smile — natural results, never overdone.</p>
+              <ul class="tags"><li>Whitening</li><li>Veneers</li><li>Bonding</li><li>Makeovers</li></ul>
+            </div>
+            <div class="stack__icon"><svg viewBox="0 0 64 64"><path d="M32 8l5 14 15 1-12 9 4 15-12-8-12 8 4-15-12-9 15-1z"/></svg></div>
+          </article>
+          <article class="stack__card" style="--i:2">
+            <div class="stack__num">03</div>
+            <div class="stack__body">
+              <h3>Orthodontics</h3>
+              <p>Clear aligners and modern braces for teens and adults, planned with 3D digital previews.</p>
+              <ul class="tags"><li>Clear aligners</li><li>Braces</li><li>Retainers</li></ul>
+            </div>
+            <div class="stack__icon"><svg viewBox="0 0 64 64"><path d="M8 26c8 10 40 10 48 0"/><path d="M8 38c8-10 40-10 48 0"/><circle cx="20" cy="30" r="3"/><circle cx="32" cy="31" r="3"/><circle cx="44" cy="30" r="3"/></svg></div>
+          </article>
+          <article class="stack__card" style="--i:3">
+            <div class="stack__num">04</div>
+            <div class="stack__body">
+              <h3>Implants & Restorative</h3>
+              <p>Implants, crowns and bridges that look, feel and function like your natural teeth.</p>
+              <ul class="tags"><li>Implants</li><li>Crowns</li><li>Bridges</li><li>Root canal</li></ul>
+            </div>
+            <div class="stack__icon"><svg viewBox="0 0 64 64"><path d="M20 8h24c0 10-4 14-4 18H24c0-4-4-8-4-18z"/><path d="M26 30h12M27 36h10M28 42h8M29 48h6M31 54h2"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before / After slider -->
+    <section class="compare section">
+      <div class="container compare__grid">
+        <div>
+          <p class="eyebrow reveal" data-reveal>Real results</p>
+          <h2 class="section__title reveal-words" data-words>See the difference a single visit can make.</h2>
+          <p class="reveal" data-reveal>Drag the handle to compare a professional whitening treatment. Results shown are illustrative for this demo.</p>
+        </div>
+        <div class="compare__frame reveal" data-reveal="scale" id="compare" data-cursor="Drag">
+          <div class="compare__side compare__side--before">
+            <svg viewBox="0 0 400 260" aria-hidden="true"><rect width="400" height="260" fill="#7f1d1d"/><path d="M40 90q160-60 320 0v40q-160 40-320 0z" fill="#e9d9a6"/><g fill="#d8c387" stroke="#b9a46a" stroke-width="2"><rect x="70" y="80" width="40" height="48" rx="10"/><rect x="114" y="74" width="42" height="56" rx="10"/><rect x="160" y="70" width="38" height="60" rx="10"/><rect x="202" y="70" width="38" height="60" rx="10"/><rect x="244" y="74" width="42" height="56" rx="10"/><rect x="290" y="80" width="40" height="48" rx="10"/></g><path d="M40 150q160 70 320 0v-10q-160 50-320 0z" fill="#991b1b"/></svg>
+            <span class="compare__tag">Before</span>
+          </div>
+          <div class="compare__side compare__side--after" id="compareAfter">
+            <svg viewBox="0 0 400 260" aria-hidden="true"><rect width="400" height="260" fill="#7f1d1d"/><path d="M40 90q160-60 320 0v40q-160 40-320 0z" fill="#ffffff"/><g fill="#ffffff" stroke="#e2f3f1" stroke-width="2"><rect x="70" y="80" width="40" height="48" rx="10"/><rect x="114" y="74" width="42" height="56" rx="10"/><rect x="160" y="70" width="38" height="60" rx="10"/><rect x="202" y="70" width="38" height="60" rx="10"/><rect x="244" y="74" width="42" height="56" rx="10"/><rect x="290" y="80" width="40" height="48" rx="10"/></g><path d="M40 150q160 70 320 0v-10q-160 50-320 0z" fill="#991b1b"/></svg>
+            <span class="compare__tag compare__tag--after">After</span>
+          </div>
+          <div class="compare__handle" id="compareHandle" role="slider" tabindex="0" aria-label="Before and after comparison" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span>⇆</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process: horizontal scroll -->
+    <section class="process" id="process">
+      <div class="process__pin">
+        <div class="container process__head">
+          <p class="eyebrow">Your visit</p>
+          <h2 class="section__title">Four simple steps to a brighter smile.</h2>
+        </div>
+        <div class="process__track" id="processTrack">
+          <div class="step"><span class="step__n">01</span><h3>Book online</h3><p>Pick a time that suits you in under a minute. Reminders are sent automatically.</p><div class="step__art">📅</div></div>
+          <div class="step"><span class="step__n">02</span><h3>Consultation</h3><p>A relaxed chat, digital scan and full check-up. We listen first.</p><div class="step__art">🩺</div></div>
+          <div class="step"><span class="step__n">03</span><h3>Your plan</h3><p>Clear options, honest pricing and a 3D preview of your result.</p><div class="step__art">🦷</div></div>
+          <div class="step"><span class="step__n">04</span><h3>Treatment & care</h3><p>Comfortable treatment followed by aftercare and friendly follow-ups.</p><div class="step__art">✨</div></div>
+        </div>
+        <div class="container"><div class="process__bar"><span id="processBar"></span></div></div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team section" id="team">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal>Meet the team</p>
+          <h2 class="section__title reveal-words" data-words>Experienced hands, warm hearts.</h2>
+        </div>
+        <div class="team__grid">
+          <article class="member reveal tilt" data-reveal data-tilt style="--d:0s">
+            <div class="member__photo" style="--h:174"><span>DN</span></div>
+            <h3>Dr. Natasha Banda</h3><p>Lead Dentist · Cosmetic</p>
+          </article>
+          <article class="member reveal tilt" data-reveal data-tilt style="--d:.1s">
+            <div class="member__photo" style="--h:200"><span>JM</span></div>
+            <h3>Dr. James Mwale</h3><p>Implantologist</p>
+          </article>
+          <article class="member reveal tilt" data-reveal data-tilt style="--d:.2s">
+            <div class="member__photo" style="--h:150"><span>CP</span></div>
+            <h3>Dr. Chipo Phiri</h3><p>Orthodontist</p>
+          </article>
+          <article class="member reveal tilt" data-reveal data-tilt style="--d:.3s">
+            <div class="member__photo" style="--h:230"><span>LT</span></div>
+            <h3>Linda Tembo</h3><p>Dental Hygienist</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <p class="eyebrow reveal" data-reveal>Patient stories</p>
+            <h2 class="section__title reveal-words" data-words>Loved by nervous patients everywhere.</h2>
+          </div>
+          <div class="slider__controls reveal" data-reveal>
+            <button class="circle-btn magnetic" id="prevT" aria-label="Previous testimonial">←</button>
+            <button class="circle-btn magnetic" id="nextT" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+        <div class="slider" id="slider">
+          <div class="slider__track" id="sliderTrack">
+            <figure class="quote"><div class="stars">★★★★★</div><blockquote>I used to dread the dentist. The team here explained every step and I genuinely felt nothing. I actually look forward to check-ups now.</blockquote><figcaption><b>Mutinta K.</b> · Whitening</figcaption></figure>
+            <figure class="quote"><div class="stars">★★★★★</div><blockquote>My implant looks completely natural. Clear pricing up front and zero surprises — highly recommended.</blockquote><figcaption><b>Peter S.</b> · Implants</figcaption></figure>
+            <figure class="quote"><div class="stars">★★★★★</div><blockquote>The aligner preview sold me instantly. Six months later my smile is exactly what they showed me.</blockquote><figcaption><b>Grace M.</b> · Clear aligners</figcaption></figure>
+            <figure class="quote"><div class="stars">★★★★★</div><blockquote>They squeezed my son in for an emergency on a Saturday. Kind, fast and brilliant with kids.</blockquote><figcaption><b>Daniel C.</b> · Emergency</figcaption></figure>
+          </div>
+        </div>
+        <div class="slider__dots" id="sliderDots"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq">
+      <div class="container faq__grid">
+        <div>
+          <p class="eyebrow reveal" data-reveal>FAQ</p>
+          <h2 class="section__title reveal-words" data-words>Questions? We've got answers.</h2>
+          <p class="reveal" data-reveal>Can't find what you need? Call us — a real person always answers.</p>
+        </div>
+        <div class="accordion">
+          <details class="acc reveal" data-reveal open><summary>Do you accept medical insurance?<i></i></summary><div class="acc__body"><p>Yes — we work with most major medical aid schemes and will check your cover before treatment.</p></div></details>
+          <details class="acc reveal" data-reveal style="--d:.05s"><summary>Is teeth whitening safe?<i></i></summary><div class="acc__body"><p>Professional whitening is safe and supervised. We assess your teeth first and tailor the strength to avoid sensitivity.</p></div></details>
+          <details class="acc reveal" data-reveal style="--d:.1s"><summary>What if I'm anxious about treatment?<i></i></summary><div class="acc__body"><p>You're not alone. We offer longer appointments, stop signals, calming music and sedation options.</p></div></details>
+          <details class="acc reveal" data-reveal style="--d:.15s"><summary>Do you handle dental emergencies?<i></i></summary><div class="acc__body"><p>We keep same-day slots for emergencies, including weekends. Call and we'll see you as quickly as possible.</p></div></details>
+          <details class="acc reveal" data-reveal style="--d:.2s"><summary>How often should I have a check-up?<i></i></summary><div class="acc__body"><p>Every six months for most people. We'll recommend a schedule that suits your oral health.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="book section" id="book">
+      <div class="container">
+        <div class="book__card reveal" data-reveal="scale">
+          <div class="book__glow"></div>
+          <div class="book__copy">
+            <p class="eyebrow eyebrow--light">Book an appointment</p>
+            <h2 class="book__title">Ready for a smile you'll love?</h2>
+            <p>Leave your details and our team will confirm your appointment within one working hour.</p>
+            <ul class="book__info">
+              <li><b>Call</b> +260 97 000 0000</li>
+              <li><b>Visit</b> 12 Example Road, Lusaka</li>
+              <li><b>Hours</b> Mon–Fri 8–19 · Sat 9–14</li>
+            </ul>
+          </div>
+          <form class="form" id="bookForm" novalidate>
+            <div class="field"><input id="fName" name="name" required placeholder=" " autocomplete="name" /><label for="fName">Full name</label></div>
+            <div class="field"><input id="fPhone" name="phone" type="tel" required placeholder=" " autocomplete="tel" /><label for="fPhone">Phone number</label></div>
+            <div class="field">
+              <select id="fService" name="service" required>
+                <option value="" disabled selected hidden></option>
+                <option>Check-up & cleaning</option><option>Whitening</option><option>Aligners / braces</option><option>Implants</option><option>Emergency</option>
+              </select>
+              <label for="fService">Treatment</label>
+            </div>
+            <div class="field"><input id="fDate" name="date" type="date" required placeholder=" " /><label for="fDate" class="label--up">Preferred date</label></div>
+            <button type="submit" class="btn btn--light magnetic btn--block"><span>Request appointment</span></button>
+            <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__big" aria-hidden="true"><span>Pearl</span><span>Dental</span></div>
+      <div class="footer__grid">
+        <div><a href="#top" class="logo logo--light"><svg viewBox="0 0 64 64" class="logo__mark"><path d="M32 10c-6-5-16-5-20 2-4 8 0 16 2 22 2 7 2 20 8 20 5 0 4-12 10-12s5 12 10 12c6 0 6-13 8-20 2-6 6-14 2-22-4-7-14-7-20-2z"/></svg><span>Pearl<em>Dental</em></span></a><p>Modern dentistry, gentle care.</p></div>
+        <div><h4>Clinic</h4><a href="#about">About</a><a href="#team">Team</a><a href="#faq">FAQ</a></div>
+        <div><h4>Treatments</h4><a href="#services">Preventive</a><a href="#services">Cosmetic</a><a href="#services">Orthodontics</a></div>
+        <div><h4>Contact</h4><a href="tel:+260970000000">+260 97 000 0000</a><a href="mailto:hello@pearldental.demo">hello@pearldental.demo</a></div>
+      </div>
+      <div class="footer__bottom"><span>© <span id="year"></span> Pearl Dental Studio — demo site</span><a href="#top" class="to-top magnetic" aria-label="Back to top">↑</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
